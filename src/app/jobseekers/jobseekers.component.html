@@ -1,0 +1,29 @@
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search by Name" style="width:200px" [(ngModel)]="searchTerm">
+</div>
+
+<div class="container">
+  <div class="row">
+    <mdb-card class="testimonial-card col-md-4"
+      *ngFor="let jobseeker of jobseekers; let ps of programmingSkills | jobseekerFilter:searchTerm">
+      <div class="card-up indigo lighten-1">
+      </div>
+      <div class="avatar mx-auto">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle">
+      </div>
+
+      <mdb-card-body>
+        <mdb-card-title>
+          <a routerLink="/jobseeker/{{jobseeker.id}}">
+            <h4>{{jobseeker.firstname}} {{jobseeker.lastname}}</h4>
+          </a>
+        </mdb-card-title>
+        <hr>
+        <p *ngFor="let data of mergedDatas">
+          <span *ngFor="let skill of data.programmingSkills"
+            class="badge badge-pill badge-primary">{{jobseeker.id == skill.jobseeker_id ? skill.name : ""}}</span>
+        </p>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>
