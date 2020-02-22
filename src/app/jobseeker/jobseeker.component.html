@@ -1,1 +1,17 @@
-<p>jobseeker works!</p>
+<div  class="profile-card">
+    <div class="image-container">
+        <img src="assets/loginhatter.jpeg" alt="Asd" style="width: 100%;">
+        <div class="title">
+            <h2>{{jobseeker?.firstname}} {{jobseeker?.lastname}} </h2>
+        </div>
+    </div>
+    <div class="main-container">
+
+        <p><i class="fa fa-heart"></i> {{jobseeker?.age}}</p>
+        <p><i class="fa fa-building"></i> {{jobseeker?.city}}</p>
+        <p><i class="fa fa-user"></i> {{jobseeker?.gender}}</p>
+        <hr>
+        <p id="about"><b><i class="fa fa-comments"></i> About</b></p>
+        <p>{{jobseeker?.description}}</p>
+    </div>
+</div>

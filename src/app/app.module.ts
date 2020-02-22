@@ -12,10 +12,10 @@ import { JobseekersComponent } from './jobseekers/jobseekers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { CompanyComponent } from './company/company.component';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LoginComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 // Http, Service
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestService } from './Services/rest.service';
 //PIPES
 import { CompanyFilterPipe } from './companies/companies-filter.pipe';
@@ -50,6 +50,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Angular Layout
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { fakeBackendProvider } from './_helpers/fake-backend';
+
+// Helpers
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { JwtInterceptor  } from './_helpers/jwt.interceptor';
 
 
 @NgModule({
@@ -64,7 +69,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     JobseekerFilterPipe,
     CompanyComponent,
     JobseekerComponent,
-    LogInComponent,
+    LoginComponent,
     RegisterComponent
   ],
   imports: [
@@ -96,9 +101,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatTableModule,
     MatPaginatorModule,
     MatBadgeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+  
   ],
-  providers: [RestService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true  },
+    fakeBackendProvider,
+     RestService
+    ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

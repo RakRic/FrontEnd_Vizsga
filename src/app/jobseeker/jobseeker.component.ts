@@ -10,10 +10,11 @@ import { JobSeeker } from '../classes/jobseeker';
 })
 export class JobseekerComponent implements OnInit {
   jobseeker: JobSeeker;
-  constructor(private rs : RestService,
-              private route : ActivatedRoute) { }
+  constructor(private rs: RestService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.rs.getJobseekerById(this.route.snapshot.paramMap.get('id'))
+      .subscribe(_jobseeker => {this.jobseeker = _jobseeker;})
   }
-
 }

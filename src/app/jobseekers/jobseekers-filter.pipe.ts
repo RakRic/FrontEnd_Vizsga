@@ -1,19 +1,34 @@
 import { PipeTransform, Pipe } from '@angular/core';
 import { JobSeeker } from '../classes/jobseeker';
-import { ProgrammingSkills } from '../classes/programmingSkills';
-import { MergedData } from './MergedData';
+
 @Pipe ({
     name: 'jobseekerFilter'
 })
 
 export class JobseekerFilterPipe implements PipeTransform {
-    transform(programmingSkills : ProgrammingSkills[], searchTerm: string, jobseekers: JobSeeker[],): JobSeeker[] {
-        console.log(jobseekers);
-        console.log(searchTerm);
-        console.log(programmingSkills);
+    transform(jobseekers: JobSeeker[], searchTerm: string): JobSeeker[] {
         if (! jobseekers || !searchTerm) {
             return jobseekers;
         }
-        return jobseekers;
+        var result = [];
+        for(var i = 0; i<jobseekers.length; i++)
+        {
+            var ps = jobseekers[i].programming_skills;
+            for(var j = 0; j <ps.length; j++)
+            {
+                if(ps[j].name.toLocaleLowerCase().includes(searchTerm.toLowerCase()))
+                {
+                    result.push(jobseekers[i]);
+                }
+            }
+        }
+        // var t = jobseekers
+        // .filter(jobseeker => jobseeker.programming_skills
+        //     .filter(programming_skill => programming_skill
+        //         .name
+        //         .toLowerCase()
+        //         .includes(searchTerm
+        //             .toLowerCase())));
+        return result;
     }
 }

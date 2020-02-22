@@ -4,3 +4,8 @@ mat-card {
     width: calc(100% - 70px);
     height: calc(100% - 70px);
   }
+
+.col-md-3 {
+  margin: 5px;
+  padding: 20px;
+}

@@ -13,7 +13,7 @@
 </div> -->
 
 
-<div class="container-fluid hero-image">
+<!-- <div class="container-fluid hero-image">
     <section class="d-flex justify-content-center align-items-center h-100 flex-row flex-wrap">
         <div class="container">
             <h2 class="text-center">Welcome to BidMe</h2>
@@ -31,4 +31,25 @@
                   </span>
             </div>
         </div>    
-    </section>
+    </section> -->
+
+    <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img src="assets/homehatter.jpeg" alt="Angular Carousel 1">
+          </div>
+          <div class="carousel-caption">
+            <h3>Looking for a Company?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img src="assets/loginhatter.jpeg" alt="Angular Carousel 2">
+          </div>
+          <div class="carousel-caption">
+            <h3>Looking for a Job Seeker?</h3>
+             <a routerLink='/jobseekers'>Start Looking</a>
+          </div>
+        </ng-template>
+    </ngb-carousel>

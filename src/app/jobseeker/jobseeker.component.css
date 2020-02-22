@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    color: #3c3939;
+    /* background-image: url("jobseekerhatter.jpg"); */
+}
+
+.profile-card {
+    width: 400px;
+    margin: 10px auto;
+    background: #fff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0 ,0.5);
+}
+
+.image-container {
+    position: relative;
+}
+
+.info {
+    color:#4b4fe2;
+    margin-right: 16px;
+}
+
+.main-container {
+    padding: 20px;
+}
+
+.title {
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+}
+
+#about {
+    text-align: center;
+}
+
+p {
+    padding: 3px;
+}

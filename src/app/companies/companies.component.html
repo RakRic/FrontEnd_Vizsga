@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group justify-content-center">
   <input type="text" class="form-control" placeholder="Search by Company Name" style="width:300px"
     [(ngModel)]="searchTerm">
 </div>
@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-    <mdb-card class="col-md-4" *ngFor="let company of companies | companyFilter:searchTerm">
+    <mdb-card class="col-md-3 mt-4 mr-md-4" *ngFor="let company of companies | companyFilter:searchTerm">
       <div class="view overlay waves-light" mdbWavesEffect>
         <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap"></mdb-card-img>
         <a>

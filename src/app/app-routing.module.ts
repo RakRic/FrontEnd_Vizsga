@@ -6,20 +6,21 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { JobseekersComponent } from './jobseekers/jobseekers.component';
 import { CompanyComponent } from './company/company.component';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LoginComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 
 const routes: Routes = [
-  { pathMatch: 'full', path: "", component: HomeComponent },
-  { path: 'companies', component: CompaniesComponent },
-  { path: 'myprofile', component: MyprofileComponent },
-  { path: 'jobseekers', component: JobseekersComponent },
-  { path: 'company/:id', component: CompanyComponent },
-  { path: 'jobseeker/:id', component: JobseekerComponent },
-  { path: 'login', component: LogInComponent },
+  { path: '', component: LoginComponent, canActivate: [AuthGuard] },
+  { path: 'companies', component: CompaniesComponent, canActivate: [AuthGuard] },
+  { path: 'myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
+  { path: 'jobseekers', component: JobseekersComponent, canActivate: [AuthGuard] },
+  { path: 'company/:id', component: CompanyComponent, canActivate: [AuthGuard] },
+  { path: 'jobseeker/:id', component: JobseekerComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

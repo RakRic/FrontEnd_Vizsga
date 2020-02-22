@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Users } from '../classes/user';
+import { User } from '../classes/user';
 import { Company } from '../classes/company';
 import { Observable, pipe } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { JobSeeker } from '../classes/jobseeker';
-import { ProgrammingSkills } from '../classes/programmingSkills';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type' : 'application/json'})
@@ -24,7 +23,6 @@ export class RestService {
 
   jobseekersUrl : string = "http://localhost:3000/jobseekers/"
   companiesUrl: string = "http://localhost:3000/companies/"
-  programmingskillsUrl: string = "http://localhost:3000/programming_skills/"
 
   getJobSeekers(): Observable<JobSeeker[]>
   {
@@ -41,10 +39,6 @@ export class RestService {
 
   getJobseekerById(id): Observable<JobSeeker> {
     return this.http.get<JobSeeker>(`${this.jobseekersUrl}/${id}`, httpOptions);
-  }
-
-  getProgrammingSkills(): Observable<ProgrammingSkills[]> {
-    return this.http.get<ProgrammingSkills[]>(this.programmingskillsUrl, httpOptions)
   }
 
   // deleteCompanyById(id): Observable<Companies[]>{

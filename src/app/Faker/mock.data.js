@@ -16,6 +16,17 @@ for (var i = 1; i<= 25; i++) {
     description: faker.lorem.sentences(5),
   });
 
+  var programmingSkills = [];
+  var psCount = faker.random.number({min:3, max: 12});
+  for(var j = 0;j < psCount; j++)
+  {
+    programmingSkills.push(
+    {
+      name : faker.address.countryCode(),
+      experience : faker.random.number(30)
+    })
+  }
+  
   //jobseekers
   database.jobseekers.push({
     id: i,
@@ -27,8 +38,9 @@ for (var i = 1; i<= 25; i++) {
     city : faker.address.city(),
     country : faker.address.country(),
     phonenumber: faker.phone.phoneNumberFormat(0),
-    gender : faker.random.number(2) == 1 ? "male" : "female",
-    zipcode : faker.address.zipCode()
+    gender : faker.random.number({min:1, max:2}) == 1 ? "Male" : "Female",
+    zipcode : faker.address.zipCode(),
+    programming_skills : programmingSkills
   });
 }
 
@@ -50,17 +62,6 @@ for(var i = 1; i<=25; i++)
       jobseeker_id : i,
       email: faker.internet.email(),
       password : faker.internet.password()
-    });
-}
-
-for(var i = 1; i<=150; i++)
-{
-    //programming_skills
-    database.programming_skills.push({
-      id: i,
-      name : faker.address.countryCode(),
-      experience : faker.random.number(30),
-      jobseeker_id : faker.random.number({min:1, max:10})
     });
 }
 

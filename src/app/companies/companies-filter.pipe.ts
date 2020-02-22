@@ -7,7 +7,6 @@ import { Company } from '../classes/company';
 
 export class CompanyFilterPipe implements PipeTransform {
     transform(companies: Company [], searchTerm: string): Company[] {
-        console.log(companies);
         if (! companies || !searchTerm) {
             return companies;
         }

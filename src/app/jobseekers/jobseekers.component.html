@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <mdb-card class="testimonial-card col-md-4"
-      *ngFor="let jobseeker of jobseekers; let ps of programmingSkills | jobseekerFilter:searchTerm">
+      *ngFor="let jobseeker of jobseekers | jobseekerFilter:searchTerm">
       <div class="card-up indigo lighten-1">
       </div>
       <div class="avatar mx-auto">
@@ -19,9 +19,9 @@
           </a>
         </mdb-card-title>
         <hr>
-        <p *ngFor="let data of mergedDatas">
-          <span *ngFor="let skill of data.programmingSkills"
-            class="badge badge-pill badge-primary">{{jobseeker.id == skill.jobseeker_id ? skill.name : ""}}</span>
+        <p>
+          <span *ngFor="let ps of jobseeker.programming_skills"
+            class="badge badge-pill badge-primary">{{ps.name}}</span>
         </p>
       </mdb-card-body>
     </mdb-card>

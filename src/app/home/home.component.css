@@ -1,4 +1,4 @@
-    .hero-image {
+    /* .hero-image {
       background-image:url("C:\Users\User\Desktop\asdasd\vizsga6\src\app\resources\homehatter.jpeg");
       height: 100%;
       background-position: center;
@@ -18,4 +18,8 @@
 
     h2 {
         margin-bottom: 100px;
-    }
+    } */
+
+   img {
+     background: linear-gradient(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
+   }

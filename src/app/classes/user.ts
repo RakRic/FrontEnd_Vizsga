@@ -1,18 +1,19 @@
-export class Users
-{
-    id:string;
-    company_id:number;
-    jobseeker_id:null;
-    email:string;
-    password:string;
+export class User {
+    id: number;
+    username: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    token?: string;
 
-    constructor(id,company_id, jobseeker_id, email, password,)
+    constructor(id,username, password, firstName, lastName, token?)
     {
         this.id = id;
-        this.company_id = company_id;
-        this.jobseeker_id = jobseeker_id;
-        this.email = email;
+        this.username = username;
         this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.token = token;
     }
 
 
