@@ -7,7 +7,7 @@ import { take } from 'rxjs/operators';
 import { JobSeeker } from '../classes/jobseeker';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type' : 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 }
 
 
@@ -19,17 +19,16 @@ export class RestService {
   companies: Company[];
   jobseekers: JobSeeker[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  jobseekersUrl : string = "http://localhost:3000/jobseekers/"
+  jobseekersUrl: string = "http://localhost:3000/jobseekers/"
   companiesUrl: string = "http://localhost:3000/companies/"
 
-  getJobSeekers(): Observable<JobSeeker[]>
-  {
+  getJobSeekers(): Observable<JobSeeker[]> {
     return this.http.get<JobSeeker[]>(this.jobseekersUrl, httpOptions);
   }
 
-  getCompanies(): Observable<Company[]>{
+  getCompanies(): Observable<Company[]> {
     return this.http.get<Company[]>(this.companiesUrl, httpOptions);
   }
 
@@ -41,8 +40,8 @@ export class RestService {
     return this.http.get<JobSeeker>(`${this.jobseekersUrl}/${id}`, httpOptions);
   }
 
-  // deleteCompanyById(id): Observable<Companies[]>{
-  //   return this.http.delete<Companies[]>(`${this.url2}/${id}`, httpOptions)
+  deleteCompanyById(id): Observable<Company[]> {
+    return this.http.delete<Company[]>(`${this.companiesUrl}/${id}`, httpOptions)
 
-  // }
+  }
 }

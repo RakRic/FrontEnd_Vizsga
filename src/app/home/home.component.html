@@ -33,23 +33,28 @@
         </div>    
     </section> -->
 
-    <ngb-carousel>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img src="assets/homehatter.jpeg" alt="Angular Carousel 1">
-          </div>
-          <div class="carousel-caption">
-            <h3>Looking for a Company?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img src="assets/loginhatter.jpeg" alt="Angular Carousel 2">
+    <mdb-carousel [isControls]="true" class="overflow-hidden">
+      <mdb-carousel-item>
+        <div class="view">
+          <img class="d-block" src="assets/company.jpg"
+            alt="First slide" class="carousel-img">
+          <div class="mask flex-center rgba-black-light">
           </div>
           <div class="carousel-caption">
             <h3>Looking for a Job Seeker?</h3>
              <a routerLink='/jobseekers'>Start Looking</a>
           </div>
-        </ng-template>
-    </ngb-carousel>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <div class="view">
+          <img class="d-block" src="assets/loginhatter.jpeg" alt="Second slide" class="carousel-img">
+          <div class="mask flex-center rgba-black-light">
+          </div>
+        </div>
+        <div class="carousel-caption">
+          <h3>Looking for a Job Seeker?</h3>
+           <a routerLink='/jobseekers'>Start Looking</a>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>

@@ -14,10 +14,13 @@ export class JobseekersComponent implements OnInit {
 
   constructor(private rs: RestService) { }
 
-  ngOnInit(): void {
-   this.rs.getJobSeekers().subscribe((data: any [])=>{
-     this.jobseekers = data;
-   });
+  ngOnInit() {
+    this.getJobSeekersFromService()
+
+  }
+
+  getJobSeekersFromService():void {
+    this.rs.getJobSeekers().subscribe(updatedJs => this.jobseekers = updatedJs);
   }
 }
 

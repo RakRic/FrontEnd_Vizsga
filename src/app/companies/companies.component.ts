@@ -16,16 +16,18 @@ export class CompaniesComponent implements OnInit {
 
   constructor(private rs: RestService) { }
 
-  ngOnInit(): void {
-    this.rs.getCompanies().subscribe((data: any [])=>{
-      this.companies = data;
-    })
+  ngOnInit() {
+    this.getCompaniesFromService()
   }
 
-  // delete(companyId) {
-  //   this.rs.deleteCompanyById(companyId).subscribe( _ => {
-  //     this.companies = this.companies.filter(cegek => cegek.id !== companyId)
-  //   })
-  // }
+  getCompaniesFromService(): void {
+    this.rs.getCompanies().subscribe(updatedCompanies => this.companies = updatedCompanies)
+  }
+
+     delete(companyId: number): void {
+       this.rs.deleteCompanyById(companyId).subscribe( _ => {
+         this.companies = this.companies.filter(deleteCompany => deleteCompany.id !== companyId)
+       })
+     }
 
 }

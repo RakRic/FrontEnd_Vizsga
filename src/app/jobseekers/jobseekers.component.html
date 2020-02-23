@@ -1,29 +1,31 @@
 <div class="form-group">
-  <input type="text" class="form-control" placeholder="Search by Name" style="width:200px" [(ngModel)]="searchTerm">
+  <input type="text" class="form-control" placeholder="Search by Programming Skills" style="width:240px" [(ngModel)]="searchTerm">
 </div>
 
-<div class="container">
-  <div class="row">
-    <mdb-card class="testimonial-card col-md-4"
-      *ngFor="let jobseeker of jobseekers | jobseekerFilter:searchTerm">
-      <div class="card-up indigo lighten-1">
-      </div>
-      <div class="avatar mx-auto">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle">
-      </div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 p-3" *ngFor="let jobseeker of jobseekers | jobseekerFilter:searchTerm">
+      <mdb-card class="testimonial-card h-100">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <div class="card-up indigo lighten-1">
+        </div>
+        <div class="avatar mx-auto p-3">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle w-100">
+        </div>
 
-      <mdb-card-body>
-        <mdb-card-title>
-          <a routerLink="/jobseeker/{{jobseeker.id}}">
-            <h4>{{jobseeker.firstname}} {{jobseeker.lastname}}</h4>
-          </a>
-        </mdb-card-title>
-        <hr>
-        <p>
-          <span *ngFor="let ps of jobseeker.programming_skills"
-            class="badge badge-pill badge-primary">{{ps.name}}</span>
-        </p>
-      </mdb-card-body>
-    </mdb-card>
+        <mdb-card-body>
+          <mdb-card-title class="text-center">
+            <a routerLink="/jobseeker/{{jobseeker.id}}">
+              <h4>{{jobseeker.firstname}} {{jobseeker.lastname}}</h4>
+            </a>
+          </mdb-card-title>
+          <hr>
+          <p>
+            <span *ngFor="let ps of jobseeker.programming_skills"
+              class="badge badge-pill badge-primary">{{ps.name}}</span>
+          </p>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
   </div>
 </div>

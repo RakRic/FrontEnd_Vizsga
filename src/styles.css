@@ -5,20 +5,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 a { cursor: pointer }
 
-ngb-carousel {
-    max-width: 700px;
-    margin: 50px auto;
-}
-
-ngb-carousel img {
-    width: 100%;
-    outline: none;
-}
-
-ngb-carousel {
-    width: inherit;
-    height: inherit;
-}
 
 .carousel-inner {
     overflow: visible;

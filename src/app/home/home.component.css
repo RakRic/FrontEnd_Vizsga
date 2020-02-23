@@ -1,25 +1,27 @@
-    /* .hero-image {
-      background-image:url("C:\Users\User\Desktop\asdasd\vizsga6\src\app\resources\homehatter.jpeg");
-      height: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-
-    .hero-text {
-      text-align: center;
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: blue;
-    }
-
-    h2 {
-        margin-bottom: 100px;
-    } */
 
    img {
      background: linear-gradient(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
    }
+
+   html, body, .view, .carousel, .carousel-inner {
+     height: 100vh;
+     margin-top: -64px;
+   }
+
+   .carousel-caption {
+    width:200px;
+    z-index:10;
+    color: black;
+    text-align:center;
+    top:50%;
+    left:45%;
+    bottom:auto;
+    -webkit-transform:translate(0, -50%);
+    -ms-transform:translate(0, -50%);
+    transform:translate(0, -50%);
+    }
+
+    /* .carousel-img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    } */
