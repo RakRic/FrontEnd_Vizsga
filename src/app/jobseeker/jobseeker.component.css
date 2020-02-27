@@ -1,7 +1,7 @@
-body {
+#asd {
     font-family: sans-serif;
     color: #3c3939;
-    /* background-image: url("jobseekerhatter.jpg"); */
+    background-image: url("/src/assets/jobseeker.jpg");
 }
 
 .profile-card {
@@ -9,15 +9,11 @@ body {
     margin: 10px auto;
     background: #fff;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0 ,0.5);
+    
 }
 
 .image-container {
     position: relative;
-}
-
-.info {
-    color:#4b4fe2;
-    margin-right: 16px;
 }
 
 .main-container {

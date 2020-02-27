@@ -55,6 +55,7 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
 // Helpers
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { JwtInterceptor  } from './_helpers/jwt.interceptor';
+import { AddprofileComponent } from './addprofile/addprofile.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { JwtInterceptor  } from './_helpers/jwt.interceptor';
     CompanyComponent,
     JobseekerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddprofileComponent
   ],
   imports: [
     BrowserModule,

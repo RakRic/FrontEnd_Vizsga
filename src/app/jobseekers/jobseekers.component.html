@@ -6,13 +6,12 @@
   <div class="row justify-content-center">
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 p-3" *ngFor="let jobseeker of jobseekers | jobseekerFilter:searchTerm">
       <mdb-card class="testimonial-card h-100">
-        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <i class="fa fa-times-circle" (click)="delete(jobseeker.id)"></i>
         <div class="card-up indigo lighten-1">
         </div>
         <div class="avatar mx-auto p-3">
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle w-100">
         </div>
-
         <mdb-card-body>
           <mdb-card-title class="text-center">
             <a routerLink="/jobseeker/{{jobseeker.id}}">
@@ -20,7 +19,9 @@
             </a>
           </mdb-card-title>
           <hr>
-          <p>
+          <p id="asd">
+            {{jobseeker.description}}
+            <br>
             <span *ngFor="let ps of jobseeker.programming_skills"
               class="badge badge-pill badge-primary">{{ps.name}}</span>
           </p>

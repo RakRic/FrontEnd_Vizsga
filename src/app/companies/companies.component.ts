@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CompaniesComponent implements OnInit {
 
-  companies: Company [];
+  companies: Company[];
   searchTerm: string;
 
   constructor(private rs: RestService) { }
@@ -24,10 +24,10 @@ export class CompaniesComponent implements OnInit {
     this.rs.getCompanies().subscribe(updatedCompanies => this.companies = updatedCompanies)
   }
 
-     delete(companyId: number): void {
-       this.rs.deleteCompanyById(companyId).subscribe( _ => {
-         this.companies = this.companies.filter(deleteCompany => deleteCompany.id !== companyId)
-       })
-     }
+  delete(companyId: number): void {
+    this.rs.deleteCompanyById(companyId).subscribe(_ => {
+      this.companies = this.companies.filter(deleteCompany => deleteCompany.id !== companyId)
+    })
+  }
 
 }

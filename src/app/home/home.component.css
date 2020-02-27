@@ -1,5 +1,5 @@
 
-   img {
+   /* img {
      background: linear-gradient(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
    }
 
@@ -24,4 +24,35 @@
     /* .carousel-img {
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
-    } */
+    } */ 
+
+    .intro-header {
+      height: unset !important;
+    }
+    .intro-2 {
+      background: url("/assets/registerhatter.jpeg")no-repeat center center;
+      background-size: cover;
+    }
+    .view {
+      height: 100vh !important;
+      color:black;
+    }
+  
+    .full-bg-img {
+      height: 100%;
+    }
+    .card {
+      background-color: rgba(229, 228, 255, 0.2);
+    }
+    
+    h6 {
+      line-height: 1.7;
+    }
+    @media (max-width: 740px) {
+      .full-height,
+      .full-height body,
+      .full-height header,
+      .full-height header .view {
+        height: 1040px;
+      }
+    }

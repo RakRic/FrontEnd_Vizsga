@@ -24,6 +24,7 @@ export class RestService {
   jobseekersUrl: string = "http://localhost:3000/jobseekers/"
   companiesUrl: string = "http://localhost:3000/companies/"
 
+  // Get
   getJobSeekers(): Observable<JobSeeker[]> {
     return this.http.get<JobSeeker[]>(this.jobseekersUrl, httpOptions);
   }
@@ -31,7 +32,7 @@ export class RestService {
   getCompanies(): Observable<Company[]> {
     return this.http.get<Company[]>(this.companiesUrl, httpOptions);
   }
-
+  // Get By Id
   getCompanyById(id): Observable<Company> {
     return this.http.get<Company>(`${this.companiesUrl}/${id}`, httpOptions);
   }
@@ -39,9 +40,21 @@ export class RestService {
   getJobseekerById(id): Observable<JobSeeker> {
     return this.http.get<JobSeeker>(`${this.jobseekersUrl}/${id}`, httpOptions);
   }
-
+  // Delete By Id
   deleteCompanyById(id): Observable<Company[]> {
     return this.http.delete<Company[]>(`${this.companiesUrl}/${id}`, httpOptions)
 
+  }
+
+  deleteJobseekerById(id): Observable<JobSeeker[]> {
+    return this.http.delete<JobSeeker[]>(`${this.jobseekersUrl}/${id}`, httpOptions)
+  }
+
+  //Put
+  updateJobSeekerNameById(data): Observable<JobSeeker> {
+    console.log("meghivva");
+    var x = this.http.put<JobSeeker>(`${this.jobseekersUrl}/${data.id}`, JSON.stringify(data), httpOptions);
+    x.subscribe(d => console.log(d));
+    return x;
   }
 }

@@ -22,6 +22,12 @@ export class JobseekersComponent implements OnInit {
   getJobSeekersFromService():void {
     this.rs.getJobSeekers().subscribe(updatedJs => this.jobseekers = updatedJs);
   }
+
+  delete(jobseekerId: number): void {
+    this.rs.deleteJobseekerById(jobseekerId).subscribe(_ => {
+      this.jobseekers = this.jobseekers.filter(deleteJobseeker => deleteJobseeker.id !== jobseekerId)
+    })
+  }
 }
 
 
