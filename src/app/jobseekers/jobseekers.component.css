@@ -5,7 +5,7 @@ mdb-card i {
     position: absolute;
     top: 5px;
     right: 5px;
-    z-index: 99999;
+    z-index: 1;
 
 }
 

@@ -52,7 +52,9 @@ export class RestService {
 
   //Put
   updateJobSeekerNameById(data): Observable<JobSeeker> {
-    return this.http.put<JobSeeker>(`${this.jobseekersUrl}/${data.id}`, JSON.stringify(data), httpOptions);
+    var x =  this.http.put<JobSeeker>(`${this.jobseekersUrl}/${data.id}`, JSON.stringify(data), httpOptions);
+    var s = x.subscribe(res => console.log(res));
+    return x;
   }
 
   // Post 

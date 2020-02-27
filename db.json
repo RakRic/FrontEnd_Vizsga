@@ -229,11 +229,11 @@
   "jobseekers": [
     {
       "id": 1,
-      "firstname": "Sylvia",
-      "lastname": "Oberbrunner",
+      "firstname": "XX",
+      "lastname": "YYY",
       "description": "Dolorem aut numquam ex ad iure optio impedit incidunt. Dolorem ducimus autem. Delectus architecto nisi dignissimos in eos et atque. Dolores magni ratione totam est sit eligendi ratione et. Possimus sed eius omnis.",
       "profile_picture_path": "http://lorempixel.com/640/480/people",
-      "age": 87,
+      "age": "87",
       "city": "Craigview",
       "country": "Ecuador",
       "phonenumber": "534-980-2649",
@@ -1260,6 +1260,43 @@
         }
       ],
       "id": 29
+    },
+    {
+      "firstname": "ASD",
+      "lastname": "ASD",
+      "description": "asd",
+      "age": 19,
+      "city": "ASD",
+      "country": "asd",
+      "phonenumber": "asd",
+      "gender": "Male",
+      "zipcode": "asd",
+      "programming_skills": [
+        {
+          "name": "FK"
+        },
+        {
+          "name": "GFK"
+        }
+      ],
+      "id": 30
+    },
+    {
+      "firstname": "asd",
+      "lastname": "",
+      "description": "",
+      "age": "",
+      "city": "",
+      "country": "",
+      "phonenumber": "",
+      "gender": "",
+      "zipcode": "",
+      "programming_skills": [
+        {
+          "name": ""
+        }
+      ],
+      "id": 31
     }
   ],
   "programming_skills": []
