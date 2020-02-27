@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../Services/rest.service';
 import { JobSeeker } from '../classes/jobseeker';
 import { FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-addprofile',
@@ -15,19 +16,34 @@ export class AddprofileComponent implements OnInit {
   profileForm = this.fb.group({
     firstname: [''],
     lastname: [''],
-    age: ['']
+    description: [''],
+    age: [''],
+    city: [''],
+    country: [''],
+    phonenumber: [''],
+    gender: [''],
+    zipcode: [''],
+    programming_skills: ['']
   })
 
   constructor(private rs: RestService,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              private router: Router,) { }
 
   ngOnInit(): void {
-    // this.getJobSeekersFromService()
   }
 
-  // getJobSeekersFromService():void {
-  //   this.rs.getJobSeekers().subscribe(added => this.jobseeker = updatedJs);
-  // }
+  addJobSeeker() {
+    var split = this.profileForm.value.programming_skills.split(" ");
+    var ps = [];
+    for(var i = 0; i < split.length; i++)
+    {
+      ps.push({"name" : split[i]});
+    }
+    this.profileForm.value.programming_skills = ps;
+    this.rs.addJobSeeker(this.profileForm.value).subscribe();
+    this.router.navigate(['jobseekers']);
+  }
 
 
 }

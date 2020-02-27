@@ -1,7 +1,6 @@
 var faker = require('faker');
 
-var database = { users:[], companies: [], jobseekers:[], programming_skills : [],
-bids:[]};
+var database = { companies: [], jobseekers:[], programming_skills : []};
 
 for (var i = 1; i<= 25; i++) {
 
@@ -22,8 +21,7 @@ for (var i = 1; i<= 25; i++) {
   {
     programmingSkills.push(
     {
-      name : faker.address.countryCode(),
-      experience : faker.random.number(30)
+      name : faker.address.countryCode()
     })
   }
   
@@ -42,27 +40,6 @@ for (var i = 1; i<= 25; i++) {
     zipcode : faker.address.zipCode(),
     programming_skills : programmingSkills
   });
-}
-
-for(var i = 1; i<=25; i++)
-{
-    //users
-    database.users.push({
-      id: i,
-      company_id : i,
-      jobseeker_id : null,
-      email: faker.internet.email(),
-      password : faker.internet.password()
-    });
-
-    //users
-    database.users.push({
-      id: i + 10,
-      company_id : null,
-      jobseeker_id : i,
-      email: faker.internet.email(),
-      password : faker.internet.password()
-    });
 }
 
 console.log(JSON.stringify(database));

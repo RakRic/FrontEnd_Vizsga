@@ -9,7 +9,7 @@ import { RootNavComponent } from './root-nav/root-nav.component';
 import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { JobseekersComponent } from './jobseekers/jobseekers.component';
-import { MyprofileComponent } from './myprofile/myprofile.component';
+import { EditProfileComponent } from './editprofile/editprofile.component';
 import { CompanyComponent } from './company/company.component';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
 import { LoginComponent } from './log-in/log-in.component';
@@ -65,7 +65,7 @@ import { AddprofileComponent } from './addprofile/addprofile.component';
     HomeComponent,
     CompaniesComponent,
     JobseekersComponent,
-    MyprofileComponent,
+    EditProfileComponent,
     CompanyFilterPipe,
     JobseekerFilterPipe,
     CompanyComponent,

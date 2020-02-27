@@ -2,26 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
-## Development server
+## Running the project
 
+## 1.
+Run `npm run generate` to generate the local db.json file (the mock.data.js file will run).
+
+## 2.
+Run `json-server --watch db.json` to start the server.
+
+## 3.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Logging in
+Navigate to the /login page, and enter "Admin" and "Admin" as username and password.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Searching for companies
+On the /companies route, you can search for company names in the search input
 
-## Build
+## Searching for job seekers
+On the /jobseekers route, you can search for a job seeker's programming skill. Clicking on the job seeker's name will navigate to a detailed page.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Editing a profile
+You can edit a registered job seeker's profile through the Edit profile menu.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Creating a profile
+You can create a new job seeker through the Create profile menu.

@@ -32,7 +32,7 @@
                                 </select>
                                 <div class="tab-content pt-3">
                                     <div class="tab-pane active">
-                                        <form class="form" (ngSubmit)="onSubmit(nameInput.value, idInput.value, descriptionInput.value, ageInput.value, cityInput.value, countryInput.value, phonenumberInput.value, zipcodeInput.value)">
+                                        <form class="form" (ngSubmit)="onSubmit(nameInput.value, idInput.value, descriptionInput.value, ageInput.value, cityInput.value, countryInput.value, phonenumberInput.value, zipcodeInput.value, genderInput.value)">
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="row">
@@ -87,6 +87,10 @@
                                                                 <textarea class="form-control" rows="5"
                                                                 value="{{actualSelectedJobSeeker.description}}" #descriptionInput></textarea>
                                                             </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label> Gender :</label>
+                                                            <input class="form-control" type="text" placeholder="Male or Female" value="{{actualSelectedJobSeeker.gender}}" #genderInput>
                                                         </div>
                                                     </div>
                                                 </div>

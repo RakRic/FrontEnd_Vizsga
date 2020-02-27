@@ -1,24 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { RestService } from '../Services/rest.service';
 import { JobSeeker } from '../classes/jobseeker';
 
 @Component({
-  selector: 'app-myprofile',
-  templateUrl: './myprofile.component.html',
-  styleUrls: ['./myprofile.component.css']
+  selector: 'app-editprofile',
+  templateUrl: './editprofile.component.html',
+  styleUrls: ['./editprofile.component.css']
 })
-export class MyprofileComponent implements OnInit {
+export class EditProfileComponent implements OnInit {
   jobseekers : JobSeeker[];
   actualSelectedJobSeeker : JobSeeker;
-    profileForm = this.fb.group({
-      name: [''],
-      email: ['']
-    });
 
 
-  constructor(private fb: FormBuilder,
-    private rs: RestService) { }
+  constructor(private rs: RestService) { }
 
   ngOnInit() {
     this.rs.getJobSeekers().subscribe(updatedJs => 
@@ -33,7 +27,7 @@ export class MyprofileComponent implements OnInit {
       {this.jobseekers = updatedJs;});
   }
 
-  onSubmit(name : string, id : string, desc : string, age: number, city: string, country: string, phonenumber: number, zipcode: number) : void {
+  onSubmit(name : string, id : string, desc : string, age: number, city: string, country: string, phonenumber: string, zipcode: string, gender: string) : void {
     var jobseeker = this.jobseekers.filter(js => js.id.toString() === id)[0];
     jobseeker.firstname = name.substring(0, name.indexOf(" "));
     jobseeker.lastname = name.slice(name.indexOf(" ") + 1);
@@ -41,8 +35,9 @@ export class MyprofileComponent implements OnInit {
     jobseeker.age = age;
     jobseeker.city = city;
     jobseeker.country = country;
-    jobseeker.phonenumber = phonenumber.toString();
-    jobseeker.zipcode = zipcode.toString();
+    jobseeker.phonenumber = phonenumber;
+    jobseeker.zipcode = zipcode;
+    jobseeker.gender = gender;
     this.rs.updateJobSeekerNameById(jobseeker);
   }
   onNameSelect(name : string) : void {

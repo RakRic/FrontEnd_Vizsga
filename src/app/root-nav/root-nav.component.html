@@ -8,7 +8,8 @@
       <a mat-list-item [routerLink]="['home']">Home</a>
       <a mat-list-item [routerLink]="['companies']">Companies</a>
       <a mat-list-item [routerLink]="['jobseekers']">Job Seekers</a>
-      <a *ngIf="isLoggedIn" mat-list-item [routerLink]="['myprofile']">Edit Profile</a>
+      <a *ngIf="isLoggedIn" mat-list-item [routerLink]="['editprofile']">Edit Profile</a>
+      <a *ngIf="isLoggedIn" mat-list-item [routerLink]="['addprofile']">Add Profile</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
