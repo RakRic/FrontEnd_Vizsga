@@ -1,24 +1,6 @@
 {
   "companies": [
     {
-      "id": 1,
-      "name": "Kertzmann Inc",
-      "logo_path": "http://lorempixel.com/640/480/business",
-      "headquarters": "North Lauriemouth",
-      "website": "https://malvina.com",
-      "motto": "autem voluptas iste debitis ea maxime omnis voluptas nulla aut eaque ipsum debitis qui dolores",
-      "description": "Impedit eum quaerat mollitia vel qui sit nihil unde. Maxime quam nulla eos iusto id ut. Eum voluptatem dolore dolorum quo qui. Velit earum est est autem incidunt vel. Quia ducimus commodi non tempora hic."
-    },
-    {
-      "id": 2,
-      "name": "Lueilwitz, Schumm and Lindgren",
-      "logo_path": "http://lorempixel.com/640/480/business",
-      "headquarters": "Dorthahaven",
-      "website": "http://layla.biz",
-      "motto": "nulla soluta omnis nihil nihil quidem sint et inventore nihil expedita tempora et non illo",
-      "description": "Rerum nihil enim quaerat corrupti. Et et dolorum corrupti laudantium dolor et occaecati. Explicabo eum sit quae nam perspiciatis deleniti voluptas. Iure beatae minima et ullam at eum cupiditate magni incidunt. Ad libero pariatur repellendus aut."
-    },
-    {
       "id": 3,
       "name": "Gusikowski Inc",
       "logo_path": "http://lorempixel.com/640/480/business",
@@ -229,15 +211,15 @@
   "jobseekers": [
     {
       "id": 1,
-      "firstname": "XX",
-      "lastname": "YYY",
+      "firstname": "Raksanyi",
+      "lastname": "Richard",
       "description": "Dolorem aut numquam ex ad iure optio impedit incidunt. Dolorem ducimus autem. Delectus architecto nisi dignissimos in eos et atque. Dolores magni ratione totam est sit eligendi ratione et. Possimus sed eius omnis.",
       "profile_picture_path": "http://lorempixel.com/640/480/people",
-      "age": "87",
-      "city": "Craigview",
-      "country": "Ecuador",
+      "age": "24",
+      "city": "Pecs",
+      "country": "JMara",
       "phonenumber": "534-980-2649",
-      "gender": "Female",
+      "gender": "Male",
       "zipcode": "25758",
       "programming_skills": [
         {
@@ -1297,6 +1279,46 @@
         }
       ],
       "id": 31
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "description": "",
+      "age": "",
+      "city": "",
+      "country": "",
+      "phonenumber": "",
+      "gender": "",
+      "zipcode": "",
+      "programming_skills": [
+        {
+          "name": ""
+        }
+      ],
+      "id": 32
+    },
+    {
+      "firstname": "Kovacs",
+      "lastname": "Zsolt",
+      "description": "This is my desc",
+      "age": "24",
+      "city": "Pécs",
+      "country": "Hungary",
+      "phonenumber": "000-000-0003",
+      "gender": "Male",
+      "zipcode": "1234",
+      "programming_skills": [
+        {
+          "name": "CD"
+        },
+        {
+          "name": "DF"
+        },
+        {
+          "name": "GH"
+        }
+      ],
+      "id": 33
     }
   ],
   "programming_skills": []

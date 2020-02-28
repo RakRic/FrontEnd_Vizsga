@@ -1,7 +1,41 @@
-#firstrow{
-    background-color: gray;
+
+.profile-card {
+    width: 400px;
+    margin: 10px auto;
+    background: #fff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0 ,0.5);
+    
 }
 
-.col-md-5 {
-    margin-top: 20px;
+.image-container {
+    position: relative;
+}
+
+.main-container {
+    padding: 20px;
+}
+
+.title {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+
+#about {
+    text-align: center;
+}
+
+p {
+    padding: 3px;
+}
+
+li {
+    padding: 7px;
+    list-style: none;
+}
+i {
+    padding: 5px;
+}
+h2 {
+    color: white;
 }

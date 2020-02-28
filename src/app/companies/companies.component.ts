@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../Services/rest.service';
 import { Company } from '../classes/company';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-companies',

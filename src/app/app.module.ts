@@ -13,7 +13,6 @@ import { EditProfileComponent } from './editprofile/editprofile.component';
 import { CompanyComponent } from './company/company.component';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
 import { LoginComponent } from './log-in/log-in.component';
-import { RegisterComponent } from './register/register.component';
 // Http, Service
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestService } from './Services/rest.service';
@@ -71,7 +70,6 @@ import { AddprofileComponent } from './addprofile/addprofile.component';
     CompanyComponent,
     JobseekerComponent,
     LoginComponent,
-    RegisterComponent,
     AddprofileComponent
   ],
   imports: [

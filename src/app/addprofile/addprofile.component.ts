@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../Services/rest.service';
 import { JobSeeker } from '../classes/jobseeker';
 import { FormBuilder } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-addprofile',
@@ -28,7 +29,8 @@ export class AddprofileComponent implements OnInit {
 
   constructor(private rs: RestService,
               private fb: FormBuilder,
-              private router: Router,) { }
+              private router: Router,
+              private location: Location) { }
 
   ngOnInit(): void {
   }
@@ -44,6 +46,11 @@ export class AddprofileComponent implements OnInit {
     this.rs.addJobSeeker(this.profileForm.value).subscribe();
     this.router.navigate(['jobseekers']);
   }
+
+  goBack() {
+    this.location.back();
+  }
+  
 
 
 }

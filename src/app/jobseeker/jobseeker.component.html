@@ -8,15 +8,29 @@
                 </div>
             </div>
             <div class="main-container">
-        
-                <p><i class="fa fa-heart"></i> {{jobseeker.age}}</p>
-                <p><i class="fa fa-building"></i> {{jobseeker.city}}</p>
-                <p><i class="fa fa-user"></i> {{jobseeker.gender}}</p>
+                <div class="row">
+                    <div class="col">
+                        <ul class="p-0">
+                            <li><i class="fa fa-heart"></i> {{jobseeker.age}}</li>
+                            <li><i class="fa fa-building"></i> {{jobseeker.city}}</li>
+                            <li><i class="fa fa-user"></i> {{jobseeker.gender}}</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <ul class="p-0">
+                                <li><i class="fa fa-globe"></i> {{jobseeker.country}}</li>
+                                <li><i class="fa fa-mobile"></i> {{jobseeker.phonenumber}}</li>
+                                <li><i class="fa fa-plane"></i> {{jobseeker.zipcode}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <hr>
                 <p id="about"><b><i class="fa fa-comments"></i> About</b></p>
                 <p>{{jobseeker.description}}</p>
                 <span *ngFor="let ps of jobseeker?.programming_skills"
-                class="badge badge-pill badge-primary">{{ps.name}}</span>
+                    class="badge badge-pill badge-primary">{{ps.name}}</span>
             </div>
         </div>
     </div>

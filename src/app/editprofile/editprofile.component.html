@@ -1,115 +1,119 @@
-<!-- <div class="container">
-    <h4 class="text-center">Select a Jobseeker and edit their profile.</h4>
-    <div class="row flex-lg-nowrap">
-        <form [formGroup]="profileForm" (ngSubmit)="onSubmit(nameInput.value, idInput.value, descriptionInput.value)">
-            <select class="form-control" (change)="onNameSelect(nameSelect.value)" #nameSelect>
-                <option *ngFor="let jobseeker of jobseekers" value="{{jobseeker.id }} {{jobseeker.firstname}} {{jobseeker.lastname}}">
-                    {{jobseeker.id }} {{jobseeker.firstname}} {{jobseeker.lastname}}
-                </option>
-            </select>
-            <input type="text" value="{{actualSelectedJobSeeker.firstname}} {{actualSelectedJobSeeker.lastname}}" #nameInput> <br>
-            <input type="text" value="{{actualSelectedJobSeeker.description}}" #descriptionInput> <br>
-            <input type="hidden" value="{{actualSelectedJobSeeker.id}}" #idInput>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</div> -->
-
-<div class="container">
-    <div class="row flex-lg-nowrap">
-        <div class="col">
-            <div class="row" *ngIf="actualSelectedJobSeeker">
-                <div class="col mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="e-profile">
-                                <h4 class="text-center">Choose a Jobseeker and edit their Profile Page </h4>
-                                <select class="form-control" (change)="onNameSelect(nameSelect.value)" #nameSelect>
-                                    <option *ngFor="let jobseeker of jobseekers"
-                                        value="{{jobseeker.id }} {{jobseeker.firstname}} {{jobseeker.lastname}}">
-                                        {{jobseeker.id }}. {{jobseeker.firstname}} {{jobseeker.lastname}}
-                                    </option>
-                                </select>
-                                <div class="tab-content pt-3">
-                                    <div class="tab-pane active">
-                                        <form class="form" (ngSubmit)="onSubmit(nameInput.value, idInput.value, descriptionInput.value, ageInput.value, cityInput.value, countryInput.value, phonenumberInput.value, zipcodeInput.value, genderInput.value)">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Full Name :</label> <br>
-                                                                <input class="form-control" type="text" value="{{actualSelectedJobSeeker.firstname}} {{actualSelectedJobSeeker.lastname}}" #nameInput> <br>
-                                                                <input type="hidden" value="{{actualSelectedJobSeeker.id}}" #idInput>
+<header>
+    <div class="container">
+        <div class="row flex-lg-nowrap">
+            <div class="col">
+                <div class="row" *ngIf="actualSelectedJobSeeker">
+                    <div class="col mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="e-profile">
+                                    <h4 class="text-center">Choose a Jobseeker and edit their Profile Page </h4>
+                                    <select class="form-control" (change)="onNameSelect(nameSelect.value)" #nameSelect>
+                                        <option *ngFor="let jobseeker of jobseekers"
+                                            value="{{jobseeker.id }} {{jobseeker.firstname}} {{jobseeker.lastname}}">
+                                            {{jobseeker.id }}. {{jobseeker.firstname}} {{jobseeker.lastname}}
+                                        </option>
+                                    </select>
+                                    <div class="tab-content pt-3">
+                                        <div class="tab-pane active">
+                                            <form class="form"
+                                                (ngSubmit)="onSubmit(nameInput.value, idInput.value, descriptionInput.value, ageInput.value, cityInput.value, countryInput.value, phonenumberInput.value, zipcodeInput.value, genderInput.value)">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label>Full Name :</label> <br>
+                                                                    <input class="form-control" type="text"
+                                                                        value="{{actualSelectedJobSeeker.firstname}} {{actualSelectedJobSeeker.lastname}}"
+                                                                        #nameInput> <br>
+                                                                    <input type="hidden"
+                                                                        value="{{actualSelectedJobSeeker.id}}" #idInput>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label>Age :</label>
+                                                                    <input class="form-control" type="number"
+                                                                        value="{{actualSelectedJobSeeker.age}}"
+                                                                        #ageInput>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Age :</label>
-                                                                <input class="form-control" type="text" 
-                                                                     value="{{actualSelectedJobSeeker.age}}" #ageInput>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> City :</label>
+                                                                    <input type="text" class="form-control"
+                                                                        value="{{actualSelectedJobSeeker.city}}"
+                                                                        #cityInput>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> Country :</label>
+                                                                    <input type="text" class="form-control"
+                                                                        value="{{actualSelectedJobSeeker.country}}"
+                                                                        #countryInput>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> City :</label>
-                                                                <input type="text" class="form-control" value="{{actualSelectedJobSeeker.city}}" #cityInput>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> Phonenumber :</label>
+                                                                    <input class="form-control" type="text"
+                                                                        value="{{actualSelectedJobSeeker.phonenumber}}"
+                                                                        #phonenumberInput>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> Zipcode :</label>
+                                                                    <input type="text" class="form-control"
+                                                                        value="{{actualSelectedJobSeeker.zipcode}}"
+                                                                        #zipcodeInput>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Country :</label>
-                                                                <input type="text" class="form-control" value="{{actualSelectedJobSeeker.country}}" #countryInput>
+                                                        <div class="row">
+                                                            <div class="col mb-3">
+                                                                <div class="form-group">
+                                                                    <label>Description</label>
+                                                                    <textarea class="form-control" rows="5"
+                                                                        value="{{actualSelectedJobSeeker.description}}"
+                                                                        #descriptionInput></textarea>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Phonenumber :</label>
+                                                            <div class="col">
+                                                                <label> Gender :</label>
                                                                 <input class="form-control" type="text"
-                                                                    value="{{actualSelectedJobSeeker.phonenumber}}" #phonenumberInput>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Zipcode :</label>
-                                                                <input type="text" class="form-control" value="{{actualSelectedJobSeeker.zipcode}}" #zipcodeInput>
+                                                                    placeholder="Male or Female"
+                                                                    value="{{actualSelectedJobSeeker.gender}}"
+                                                                    #genderInput>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col mb-3">
-                                                            <div class="form-group">
-                                                                <label>Description</label>
-                                                                <textarea class="form-control" rows="5"
-                                                                value="{{actualSelectedJobSeeker.description}}" #descriptionInput></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <label> Gender :</label>
-                                                            <input class="form-control" type="text" placeholder="Male or Female" value="{{actualSelectedJobSeeker.gender}}" #genderInput>
-                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col d-flex justify-content-between">
+                                                        <button class="btn btn-primary" type="button"
+                                                            (click)="goBack()">Back</button>
+                                                        <button id="backbutton" class="btn btn-primary"
+                                                            type="submit">Save
+                                                            Changes</button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col d-flex justify-content-end">
-                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
-                                                </div>
-                                            </div>
-                                        </form>
-
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
+</header>

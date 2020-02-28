@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { User } from '../classes/user';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Company } from '../classes/company';
-import { Observable, pipe } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { JobSeeker } from '../classes/jobseeker';
 
 const httpOptions = {

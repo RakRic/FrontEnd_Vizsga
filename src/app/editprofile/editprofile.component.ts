@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../Services/rest.service';
 import { JobSeeker } from '../classes/jobseeker';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editprofile',
@@ -12,7 +14,9 @@ export class EditProfileComponent implements OnInit {
   actualSelectedJobSeeker : JobSeeker;
 
 
-  constructor(private rs: RestService) { }
+  constructor(private rs: RestService,
+              private location: Location,
+              private router: Router) { }
 
   ngOnInit() {
     this.rs.getJobSeekers().subscribe(updatedJs => 
@@ -39,9 +43,14 @@ export class EditProfileComponent implements OnInit {
     jobseeker.zipcode = zipcode;
     jobseeker.gender = gender;
     this.rs.updateJobSeekerNameById(jobseeker);
+    this.router.navigate(['jobseekers']);
   }
   onNameSelect(name : string) : void {
     var id = name.substring(0, name.indexOf(" "));
     this.actualSelectedJobSeeker = this.jobseekers.filter(js => js.id.toString() === id)[0];
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

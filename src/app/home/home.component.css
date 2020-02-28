@@ -1,48 +1,19 @@
-
-   /* img {
-     background: linear-gradient(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
-   }
-
-   html, body, .view, .carousel, .carousel-inner {
-     height: 100vh;
-     margin-top: -64px;
-   }
-
-   .carousel-caption {
-    width:200px;
-    z-index:10;
-    color: black;
-    text-align:center;
-    top:50%;
-    left:45%;
-    bottom:auto;
-    -webkit-transform:translate(0, -50%);
-    -ms-transform:translate(0, -50%);
-    transform:translate(0, -50%);
-    }
-
-    /* .carousel-img {
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-    } */ 
-
     .intro-header {
       height: unset !important;
     }
     .intro-2 {
-      background: url("/assets/registerhatter.jpeg")no-repeat center center;
+      background: url("/assets/homehatter.jpeg")no-repeat center center;
       background-size: cover;
     }
     .view {
       height: 100vh !important;
       color:black;
     }
-  
-    .full-bg-img {
-      height: 100%;
-    }
     .card {
       background-color: rgba(229, 228, 255, 0.2);
+    }
+    mdb-card-body {
+      padding: 0;
     }
     
     h6 {

@@ -1,0 +1,15 @@
+ header {
+    background-image: url("/assets/addprofile.jpg");
+    background-size: cover;
+    height: 100vh !important ;
+}
+
+div {
+    font-weight: bold;
+}
+
+.card {
+    background-color: rgba(229, 228, 255, 0.2);
+    border: none;
+  }
+

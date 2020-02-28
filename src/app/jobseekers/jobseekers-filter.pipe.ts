@@ -22,13 +22,6 @@ export class JobseekerFilterPipe implements PipeTransform {
                 }
             }
         }
-        // var t = jobseekers
-        // .filter(jobseeker => jobseeker.programming_skills
-        //     .filter(programming_skill => programming_skill
-        //         .name
-        //         .toLowerCase()
-        //         .includes(searchTerm
-        //             .toLowerCase())));
         return result;
     }
 }

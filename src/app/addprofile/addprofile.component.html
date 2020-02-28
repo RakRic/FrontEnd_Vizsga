@@ -1,84 +1,102 @@
-<div class="container">
-    <div class="row flex-lg-nowrap">
-        <div class="col">
-            <div class="row">
-                <div class="col mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="e-profile">
-                                <h4 class="text-center">Add new Profile  </h4>
-                                <div class="tab-content pt-3">
-                                    <div class="tab-pane active">
-                                        <form class="form" [formGroup]="profileForm" (ngSubmit)="addJobSeeker()">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>First Name :</label>
-                                                                <input class="form-control" formControlName="firstname" type="text"> <br>
-                                                                <label>Last Name :</label>
-                                                                <input class="form-control" formControlName="lastname" type="text">
+<header>
+    <div class="container">
+        <div class="row flex-lg-nowrap">
+            <div class="col">
+                <div class="row">
+                    <div class="col mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="e-profile">
+                                    <h4 class="text-center">Add new Profile </h4>
+                                    <div class="tab-content pt-3">
+                                        <div class="tab-pane active">
+                                            <form class="form" [formGroup]="profileForm" (ngSubmit)="addJobSeeker()">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <i class="fa fa-globe mr-2"></i>
+                                                                    <label>First Name :</label>
+                                                                    <input placeholder="Jane" class="form-control"
+                                                                        formControlName="firstname" type="text"> <br>
+                                                                    <label>Last Name :</label>
+                                                                    <input placeholder="Doe" class="form-control"
+                                                                        formControlName="lastname" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label>Age :</label>
+                                                                    <input placeholder="1" class="form-control"
+                                                                        formControlName="age" type="number"> <br>
+                                                                    <label> Gender :</label>
+                                                                    <input placeholder="Male of Female" type="text"
+                                                                        class="form-control" formControlName="gender">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Age :</label>
-                                                                <input class="form-control" formControlName="age" type="number" > <br>
-                                                                <label> Gender :</label>
-                                                                <input type="text" class="form-control" formControlName="gender">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> City :</label>
+                                                                    <input placeholder="Pécs" type="text"
+                                                                        formControlName="city" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> Country :</label>
+                                                                    <input placeholder="Hungary" type="text"
+                                                                        class="form-control" formControlName="country">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> City :</label>
-                                                                <input type="text" formControlName="city" class="form-control" >
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> Phonenumber :</label>
+                                                                    <input placeholder="000-000-0000"
+                                                                        class="form-control"
+                                                                        formControlName="phonenumber" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label> Zipcode :</label>
+                                                                    <input placeholder="1234" type="text"
+                                                                        class="form-control" formControlName="zipcode">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Country :</label>
-                                                                <input type="text" class="form-control" formControlName="country">
+                                                        <div class="row">
+                                                            <div class="col mb-3">
+                                                                <div class="form-group">
+                                                                    <label>Description</label>
+                                                                    <textarea placeholder="This is my Description"
+                                                                        class="form-control"
+                                                                        formControlName="description"
+                                                                        rows="5"></textarea>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Phonenumber :</label>
-                                                                <input class="form-control" formControlName="phonenumber" type="text">
+                                                            <div class="col">
+                                                                <label> Programming Skills :</label>
+                                                                <input placeholder="KL JK LO PS" type="text"
+                                                                    class="form-control"
+                                                                    formControlName="programming_skills">
                                                             </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Zipcode :</label>
-                                                                <input type="text" class="form-control" formControlName="zipcode">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col mb-3">
-                                                            <div class="form-group">
-                                                                <label>Description</label>
-                                                                <textarea class="form-control" formControlName="description" rows="5"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <label> Programming Skills :</label>
-                                                            <input type="text" class="form-control" formControlName="programming_skills">
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col d-flex justify-content-end">
-                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                                <div class="row">
+                                                    <div class="col d-flex justify-content-between">
+                                                        <button class="btn btn-primary" type="button"
+                                                            (click)="goBack()">Back</button>
+                                                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </form>
-
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +104,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
+</header>

@@ -1,12 +1,26 @@
-<div class="container">
-    <div class="row col-md-5 let _company of company" *ngIf="company">
-        <ul class="list-group" >
-            <li id="firstrow" class="list-group-item text-center">Profile</li>
-            <li class="list-group-item">Company's Name: {{company.name}}</li>
-            <li class="list-group-item">Headquartes: {{company.headquarters}}</li>
-            <li class="list-group-item">Website: {{company.website}}</li>
-            <li class="list-group-item">Motto: {{company.motto}}</li>
-            <li class="list-group-item">Description: {{company.description}}</li>
-        </ul>
+<div class="container-fluid">
+    <div class="row" *ngIf="company">
+        <div class="profile-card">
+            <div class="image-container">
+                <img src="assets/company.jpg" alt="Company Image" style="width: 100%;">
+                <div class="title">
+                    <h2>{{company.name}} </h2>
+                </div>
+            </div>
+            <div class="main-container text-center">
+                <div class="row">
+                    <div class="col">
+                        <ul class="p-0">
+                            <li><i class="fa fa-heart"></i> {{company.headquarters}}</li>
+                            <li><i class="fa fa-internet-explorer"></i> {{company.website}}</li>
+                            <li><i class="fa fa-book"></i> <br> {{company.motto}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p id="about"><b><i class="fa fa-comments"></i> About</b></p>
+                <p>{{company.description}}</p>
+            </div>
+        </div>
     </div>
 </div>
