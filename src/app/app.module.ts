@@ -13,6 +13,7 @@ import { EditProfileComponent } from './editprofile/editprofile.component';
 import { CompanyComponent } from './company/company.component';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
 import { LoginComponent } from './log-in/log-in.component';
+import { AddprofileComponent } from './addprofile/addprofile.component';
 // Http, Service
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestService } from './Services/rest.service';
@@ -54,7 +55,6 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
 // Helpers
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { JwtInterceptor  } from './_helpers/jwt.interceptor';
-import { AddprofileComponent } from './addprofile/addprofile.component';
 
 
 @NgModule({

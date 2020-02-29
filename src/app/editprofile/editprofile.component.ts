@@ -45,6 +45,7 @@ export class EditProfileComponent implements OnInit {
     this.rs.updateJobSeekerNameById(jobseeker);
     this.router.navigate(['jobseekers']);
   }
+  
   onNameSelect(name : string) : void {
     var id = name.substring(0, name.indexOf(" "));
     this.actualSelectedJobSeeker = this.jobseekers.filter(js => js.id.toString() === id)[0];
