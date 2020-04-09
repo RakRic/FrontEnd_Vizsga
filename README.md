@@ -26,4 +26,4 @@ On the /jobseekers route, you can search for a job seeker's programming skill. C
 You can edit a registered job seeker's profile through the Edit profile menu.
 
 ## Creating a profile
-You can create a new job seeker through the Create profile menu.
+You can create a new job seeker through the Create profile men.
